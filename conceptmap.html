@@ -5,7 +5,7 @@
 	<meta name="description" content="An abstract mapping for parameters. Works best if first tag is 'unique' among the tracklist, and the second tag applies to multiple tracks"/>
 	<meta name="mintags" content="2" />
 	<meta name="maxtags" content="2" />
-	<title>Jam Cellar 2014-05-06</title>
+	<title>The Scarlet Pimpernel</title>
 	
 <style>	
 
@@ -60,8 +60,41 @@ text {
 // Loosely based on http://bl.ocks.org/mbostock/4063550
 //
 
-var data = [['Sweet', ["Shit", "dont care", "wat do you imagine", "cold", "damp", "silly", "swing"]], 
-['Life',['Shit','SOmetimes','who cares','well fuck off']]];
+var data= [['Chapter1', ['bibot', 'day', 'guillotine', 'people', 'grospierre', 'gate', 'citoyen', 'cart', 'aristos', 'crowd']],
+['Chapter2', ['jellyband', 'host', 'room', 'rest', 'fisherman_rest', 'fisherman', 'hempseed', 'kitchen', 'coffee_room', 'friend']],
+['Chapter3', ['lord', 'lord_antony', 'antony', 'jellyband', 'england', 'sir', 'moment', 'coffee', 'room', 'supper']],
+['Chapter4', ['sir', 'lord', 'comtesse', 'lord_antony', 'england', 'antony', 'madame', 'leader', 'france', 'monsieur']],
+['Chapter5', ['lady', 'blakeney', 'sir', 'marguerite', 'lady_blakeney', 'moment', 'hand', 'lord', 'comtesse', 'voice']],
+['Chapter6', ['sir', 'percy', 'sir_percy', 'blakeney', 'wife', 'marguerite', 'laugh', 'men', 'vicomte', 'man']],
+['Chapter7', ['armand', 'blakeney', 'marguerite', 'percy', 'man', 'sister', 'france', 'love', 'distance', 'men']],
+['Chapter8', ['chauvelin', 'marguerite', 'france', 'man', 'day', 'sir', 'blakeney', 'citoyenne', 'pimpernel', 'love']],
+['Chapter9', ['sir', 'lord', 'men', 'night', 'andrew', 'sir_andrew', 'antony', 'room', 'lord_antony', 'time']],
+['Chapter10', ['chauvelin', 'box', 'marguerite', 'lord', 'citoyenne', 'lady', 'sir', 'man', 'grenville', 'night']],
+['Chapter11', ['prince', 'chauvelin', 'france', 'grenville', 'lord_grenville', 'lord', 'highness', 'madame', 'marguerite', 'comtesse']],
+['Chapter12', ['sir', 'sir_andrew', 'andrew', 'marguerite', 'paper', 'moment', 'hand', 'room', 'blakeney', 'eyes']],
+['Chapter13', ['blakeney', 'life', 'sir', 'armand', 'minuet', 'marguerite', 'lady', 'words', 'room', 'armand_armand']],
+['Chapter14', ['room', 'chauvelin', 'supper', 'eyes', 'lady', 'marguerite', 'supper_room', 'pimpernel', 'clock', 'moment']],
+['Chapter15', ['chauvelin', 'lord', 'room', 'lady', 'blakeney', 'hope', 'fancourt', 'lord_fancourt', 'dining_room', 'dining']],
+['Chapter16', ['percy', 'sir', 'sir_percy', 'madame', 'love', 'eyes', 'pride', 'night', 'house', 'moment']],
+['Chapter17', ['marguerite', 'percy', 'heart', 'love', 'morning', 'man', 'armand', 'ladyship', 'night', 'nothing']],
+['Chapter18', ['marguerite', 'percy', 'sir', 'sir_percy', 'room', 'day', 'desk', 'study', 'portrait', 'husband']],
+['Chapter19', ['marguerite', 'chauvelin', 'cherie', 'pimpernel', 'percy', 'eyes', 'husband', 'suzanne', 'groom', 'man']],
+['Chapter20', ['man', 'sir', 'husband', 'chauvelin', 'percy', 'pimpernel', 'andrew', 'sir_andrew', 'blakeney', 'eyes']],
+['Chapter21', ['sir', 'marguerite', 'night', 'jellyband', 'sir_andrew', 'andrew', 'blakeney', 'storm', 'ladyship', 'room']],
+['Chapter22', ['sir', 'marguerite', 'sir_andrew', 'andrew', 'room', 'man', 'friend', 'table', 'supper', 'soup']],
+['Chapter23', ['sir', 'chauvelin', 'sir_andrew', 'percy', 'andrew', 'man', 'marguerite', 'hour', 'room', 'blakeney']],
+['Chapter24', ['chauvelin', 'marguerite', 'room', 'man', 'table', 'death', 'citoyen', 'stranger', 'heart', 'moment']],
+['Chapter25', ['chauvelin', 'marguerite', 'blakeney', 'moment', 'percy', 'sir', 'men', 'table', 'soup', 'time']],
+['Chapter26', ['chauvelin', 'jew', 'cart', 'men', 'reuben', 'excellency', 'citoyen', 'englishman', 'man', 'stranger']],
+['Chapter27', ['road', 'chauvelin', 'men', 'marguerite', 'cart', 'jew', 'stranger', 'edge', 'heart', 'night']],
+['Chapter28', ['chauvelin', 'jew', 'marguerite', 'hut', 'soldiers', 'men', 'man', 'road', 'citoyen', 'cliffs']],
+['Chapter29', ['men', 'marguerite', 'lady', 'death', 'eyes', 'safety', 'hand', 'sea', 'chauvelin', 'brother']],
+['Chapter30', ['chauvelin', 'soldiers', 'men', 'citoyen', 'jew', 'hut', 'woman', 'marguerite', 'time', 'cliffs']],
+['Chapter31', ['percy', 'marguerite', 'chauvelin', 'sir', 'time', 'blakeney', 'eyes', 'cliffs', 'day', 'soldiers']]]
+
+
+//var data = [['Sweet', ["Shit", "dont care", "wat do you imagine", "cold", "damp", "silly", "swing"]], 
+//['Life',['Shit','SOmetimes','who cares','well fuck off']]];
 
 console.log(data);
 
@@ -151,7 +184,7 @@ var color = d3.scale.linear()
     .clamp(true);
 
 var diameter = 960;
-var rect_width = 40;
+var rect_width = 70;
 var rect_height = 14;
 
 var link_width = "1px"; 
